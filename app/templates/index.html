@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data science</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="static/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/table.css') }}">
+
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.2.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.2.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.2.min.js"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src={{cdn_js1}} integrity="sha384-kLr4fYcqcSpbuI95brIH3vnnYCquzzSxHPU6XGQCIkQRGJwhg0StNbj1eegrHs12" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="datalogo" src="static/img/gif/datalogo.gif" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About this project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About me</a>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </nav>
+
+    <!--- Image Slider -->
+    <div id="slides" class="carousel slide" data-ride="carousel">
+<ul class="carousel-indicators">
+  <li data-target="#slides" data-slide-to="0" class="active"></li>
+  <li data-target="#slides" data-slide-to="1"></li>
+  <li data-target="#slides" data-slide-to="2"></li>
+</ul>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="static/img/realestate1.jpg" alt="image1">
+    <div class="carousel-caption">
+      <h4 class="display-4">Webscraping Project</h4>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="static/img/datavisual.jpg" alt="image2">
+    <div class="carousel-caption">
+      <h4 class="display-4">Data analysis</h4>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="static/img/project.jpg" alt="image3">
+    <div class="carousel-caption">
+      <h4 class="display-4" id="text-carousel-img">Revealing insights</h4>
+    </div>
+  </div>
+</div>
+    </div>
+    <!--- Jumbotron -->
+<div class="container-fluid">
+  <div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+      <p class="lead">
+        A webscraping project that scrapes real estate data from two popular romanian websites: www.imobiliare.ro and www.storia.ro, performing data analysis on them.
+      </p>
+    </div>
+  </div>
+</div>
+    <!--- Welcome Section -->
+
+    <!--- Three Column Section -->
+
+    <!--- Two Column Section -->
+
+    <!--- Fixed background -->
+
+    <!--- Emoji Section -->
+
+    <!--- Meet the team -->
+<div class="container-fluid padding">
+  <div class="row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4">Data Visualisation</h1>
+    </div>
+  </div>
+</div>
+    <!--- Cards -->
+<div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">General view & statistics</h2>
+          <div>
+            {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Number of records per source</h2>
+          <div>
+                {{script1 | safe}}
+                {{div1 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Number of records per city</h2>
+          <div>
+                {{script2 | safe}}
+                {{div2 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Average price per city</h2>
+          <div>
+                {{script3 | safe}}
+                {{div3 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Average price per apartment surface (square meters)</h2>
+          <div>
+                {{script4 | safe}}
+                {{div4 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                    <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Average price per location area in Cluj-Napoca</h2>
+          <div>
+                {{script5 | safe}}
+                {{div5 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                        <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Average price per city per year</h2>
+          <div>
+                {{script6 | safe}}
+                {{div6 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                            <!--- Cards -->
+    <div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Average price per number of rooms per year</h2>
+          <div>
+                {{script7 | safe}}
+                {{div7 | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--- Two Column Section -->
+
+    <!--- Connect -->
+
+    <!--- Footer -->
+  </body>
+</html>

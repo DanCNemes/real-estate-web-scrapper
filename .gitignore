@@ -1,0 +1,12 @@
+testing.py
+venv
+.ipynb_checkpoints
+db_objects/config.py
+app/Procfile
+app/runtime.txt
+app/requirements.txt
+line_profiler
+.idea
+profiler_stats.txt
+profiler_stats_processer.txt
+
